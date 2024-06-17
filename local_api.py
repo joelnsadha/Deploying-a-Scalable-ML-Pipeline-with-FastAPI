@@ -2,15 +2,16 @@ import json
 
 import requests
 
+# URL of the FastAPI server
+url = "http://127.0.0.1:8000"
+
 # TODO: send a GET using the URL http://127.0.0.1:8000
-r = # Your code here
+r_get = requests.get(url)
 
 # TODO: print the status code
-# print()
+print(f"GET request status code: {r_get.status_code}")
 # TODO: print the welcome message
-# print()
-
-
+print(f"GET request response: {r_get.json()}")
 
 data = {
     "age": 37,
@@ -30,9 +31,13 @@ data = {
 }
 
 # TODO: send a POST using the data above
-r = # Your code here
+# r_post = requests.post(f"{url}/inference/", json=data)
+r_post = requests.post(f"{url}/data/", json=data)
 
 # TODO: print the status code
-# print()
+print(f"POST request status code: {r_post.status_code}")
 # TODO: print the result
-# print()
+try:
+    print(f"POST request response: {r_post.json()}")
+except requests.exceptions.JSONDecodeError:
+    print(f"POST request response (text): {r_post.text}")
