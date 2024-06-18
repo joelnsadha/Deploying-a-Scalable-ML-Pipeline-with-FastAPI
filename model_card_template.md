@@ -35,6 +35,8 @@ Objective: To assess the model's performance.
 
 The model's performance was assessed using precision, recall, and F1-score. The following metrics were obtained on the test dataset:
 
+Metrics_Precision: 0.7419 | Recall: 0.6384 | F1: 0.6863
+
 workclass: ?, Count: 389
 Precision: 0.6538 | Recall: 0.4048 | F1: 0.5000
 workclass: Federal-gov, Count: 191
